@@ -1,38 +1,47 @@
+#3.2 Implement a function called sort_students that takes a list of student objects as input and sorts the list based on their CGPA (Cumulative Grade Point Average) in descending order. Each student object has the following attributes: name (string), roll_number (string), and cgpa (float). Test the function with different input lists of students.
 
-#2.2 Implement a class called Player that represents a cricket player. The Player class should have a method called play() which prints "The player is playing cricket. Derive two classes, Batsman and Bowler, from the Player class. Override the play() method in each derived class to print "The batsman is batting" and "The bowler is bowling", respectively. Write a program to create objects of both the Batsman and Bowler classes and call the play() method for each object.
+class Student:
 
-# Define the Player class
+    def __init__(self, name, roll_number, cgpa):
 
-class Player:
+        self.name = name
 
-    def play(self):
+        self.roll_number = roll_number
 
-        print("The player is playing cricket.")
+        self.cgpa = cgpa
 
-# Define the Batsman class, derived from Player
 
-class Batsman(Player):
 
-    def play(self):
+def sort_students(student_list):
 
-        print("The batsman is batting.")
+    sorted_students = sorted(student_list, key=lambda student: student.cgpa, reverse=True)
 
-# Define the Bowler class, derived from Player
+    return sorted_students
 
-class Bowler(Player):
 
-    def play(self):
 
-        print("The bowler is bowling.")
+# Example usage:
 
-# Create objects of Batsman and Bowler classes
+student1 = Student("Nithi", "0722129016", 3.7)
 
-batsman = Batsman()
+student2 = Student("Nila", "0722129001", 3.9)
 
-bowler = Bowler()
+student3 = Student("Muthu", "0722129017", 3.5)
 
-# Call the play() method for each object
+student4 = Student("keerthana", "072212002", 3.8)
 
-batsman.play()
 
-bowler.play()
+
+students = [student1, student2, student3, student4]
+
+
+
+sorted_students = sort_students(students)
+
+
+
+# Print the sorted list of students by CGPA in descending order
+
+for student in sorted_students:
+
+    print(f"Name: {student.name}, Roll Number: {student.roll_number}, CGPA: {student.cgpa}")
