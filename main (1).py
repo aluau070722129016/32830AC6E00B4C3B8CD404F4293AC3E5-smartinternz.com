@@ -1,35 +1,38 @@
-year=2023
 
-# To get year (integer input) from the user
+#2.2 Implement a class called Player that represents a cricket player. The Player class should have a method called play() which prints "The player is playing cricket. Derive two classes, Batsman and Bowler, from the Player class. Override the play() method in each derived class to print "The batsman is batting" and "The bowler is bowling", respectively. Write a program to create objects of both the Batsman and Bowler classes and call the play() method for each object.
 
-# year = int(input("Enter a year: "))
+# Define the Player class
 
+class Player:
 
+    def play(self):
 
-# divided by 100 means century year (ending with 00)
+        print("The player is playing cricket.")
 
-# century year divided by 400 is leap year
+# Define the Batsman class, derived from Player
 
-if (year % 400 == 0) and (year % 100 == 0):
+class Batsman(Player):
 
-    print("{0} is a leap year".format(year))
+    def play(self):
 
+        print("The batsman is batting.")
 
+# Define the Bowler class, derived from Player
 
-# not divided by 100 means not a century year
+class Bowler(Player):
 
-# year divided by 4 is a leap year
+    def play(self):
 
-elif (year % 4 ==0) and (year % 100 != 0):
+        print("The bowler is bowling.")
 
-    print("{0} is a leap year".format(year))
+# Create objects of Batsman and Bowler classes
 
+batsman = Batsman()
 
+bowler = Bowler()
 
-# if not divided by both 400 (century year) and 4 (not century year)
+# Call the play() method for each object
 
-# year is not leap year
+batsman.play()
 
-else:
-
-    print("{0} is not a leap year".format(year))
+bowler.play()
